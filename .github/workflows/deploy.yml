@@ -19,6 +19,8 @@ jobs:
           script: |
             cd ~/estore-backend
             git pull origin main
+            composer install
+            npm install
 
   run-containers:
     name: Start Sail Containers
