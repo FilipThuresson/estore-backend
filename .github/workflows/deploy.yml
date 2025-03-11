@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/filip/estore-admin
+            cd ~/estore-backend
             git pull origin main
 
   run-containers:
@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/filip/estore-admin
+            cd ~/estore-backend
             ./vendor/bin/sail up --build -d
 
   run-migrations:
@@ -47,7 +47,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/filip/estore-admin
+            cd ~/estore-backend
             ./vendor/bin/sail npm run build
             ./vendor/bin/sail artisan migrate
 
