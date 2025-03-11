@@ -51,7 +51,7 @@ jobs:
           script: |
             cd ~/estore-backend
             ./vendor/bin/sail artisan down
-            ./vendor/bin/sail npm build
+            ./vendor/bin/sail npm run build
             ./vendor/bin/sail artisan migrate
             ./vendor/bin/sail artisan up
 
