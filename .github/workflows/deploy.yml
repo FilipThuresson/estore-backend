@@ -50,6 +50,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/estore-backend
-            ./vendor/bin/sail npm run build
             ./vendor/bin/sail artisan migrate
 
