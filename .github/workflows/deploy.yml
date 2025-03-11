@@ -17,8 +17,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/filip/estore-admin Change this to your actual path
-            git pull origin main  # Pull latest code
+            cd /home/filip/estore-admin
+            git pull origin main
 
   run-containers:
     name: Start Sail Containers
@@ -32,8 +32,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/filip/estore-admin  # Change this to your actual path
-            ./vendor/bin/sail up --build -d  # Start/rebuild the new containers
+            cd /home/filip/estore-admin
+            ./vendor/bin/sail up --build -d
 
   run-migrations:
     name: Run Migrations
@@ -47,7 +47,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/filip/estore-admin  # Change this to your actual path
+            cd /home/filip/estore-admin
             ./vendor/bin/sail npm run build
-            ./vendor/bin/sail artisan migrate  # Run migrations
+            ./vendor/bin/sail artisan migrate
 
