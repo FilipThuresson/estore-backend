@@ -66,7 +66,7 @@ jobs:
             cd ~/estore-backend
             ./vendor/bin/sail npm run build
             ./vendor/bin/sail artisan migrate
-            ./vendor/bind/sail artisan db:seed
+            ./vendor/bin/sail artisan db:seed
 
   maintance-mode-up:
     name: Set app to normal mode
